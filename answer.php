@@ -37,7 +37,7 @@
         <?php
         $base = $_POST["base"];
         $height = $_POST["height"];
-        echo "The area is: " . ($base * $height) / 2 . " cm<sup>2"
+        echo "The area is: " . 0.5 * ($base * $height) . " cm<sup>2"
         ?>
       </div>
     </main>
