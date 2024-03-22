@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="Triangle form with PHP" />
+  <meta name="description" content="Form with php" />
   <meta name="author" content="Kai Nguyen" />
   <meta name="keywords" content="mths, ics2o" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <title>PHP triangle form</title>
+  <title>PHP form</title>
 </head>
 
 <body>
@@ -24,37 +24,21 @@
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
         <!-- Title -->
-        <span class="mdl-layout-title">PHP triangle Form</span>
+        <span class="mdl-layout-title">PHP Form</span>
         <!-- Add spacer, to align navigation to the right -->
         <div class="mdl-layout-spacer"></div>
       </div>
     </header>
     <main class="mdl-layout__content">
       <div class="right-image">
-        <img src="./images/Triangle.webp" alt="computer image" />
+        <img src="./images/Triangle.webp" alt="Triangle image" />
       </div>
-      <div class="page-content">Enter triangle dimensions</div>
-      <form action="answer.php" method="POST">
-        <p>Base</p>
-        <div class="mdl-textfield mdl-js-textfield">
-          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="base" />
-          <label class="mdl-textfield__label" for="base-entered">Base (cm)</label>
-          <span class="mdl-textfield__error">Input is not a number!</span>
-        </div>
-        <!-- Numeric Textfield -->
-        <p>Height</p>
-        <div class="mdl-textfield mdl-js-textfield">
-          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="height" />
-          <label class="mdl-textfield__label" for="height-entered">Height (cm)</label>
-          <span class="mdl-textfield__error">Input is not a number!</span>
-        </div>
-        <br />
-        <input class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit"></input>
-      </form>
-      <br />
-      <br />
-      <div class="page-content-answer">
-        <div id="answer"></div>
+      <div class="page-content">
+        <?php
+        $base = $_POST["base"];
+        $height = $_POST["height"];
+        echo "The area is: " . ($base * $height) / 2 . " cm<sup>2"
+        ?>
       </div>
     </main>
   </div>
